@@ -1,1 +1,1 @@
-# Snoopys-Snooze-Protocol
+# NoSnooze
