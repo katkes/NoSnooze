@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: nosnooze-backend
+
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/nosnooze}
+    username: ${DATABASE_USERNAME:nosnooze}
+    password: ${DATABASE_PASSWORD:nosnooze}
+
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+
+  flyway:
+    enabled: true
+
+server:
+  port: ${PORT:8080}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+  endpoint:
+    health:
+      show-details: never
+
+app:
+  frontend-origins: ${FRONTEND_ORIGINS:http://localhost:5173,http://localhost:4173}
